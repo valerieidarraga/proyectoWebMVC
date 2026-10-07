@@ -10,9 +10,10 @@ try{
     $conexion = new PDO ("mysql:host=$host;dbname=$dbname;chatset=utf8",
      $username, $password);
 
-     $conexion -> setAttribute(PDO:: ATTR_)
+     $conexion -> setAttribute(PDO:: ATTR_GET_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-} catch{
+} catch(PDOException $e){
+    echo "Error de conexion: " . $e->getMessage();
 
 }
 
