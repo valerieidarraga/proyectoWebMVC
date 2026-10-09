@@ -1,9 +1,11 @@
-<html>
-<head>
-    <title>Mi Sitio Web</title>
-</head>
-<body>
-    <h1>Bienvenido a mi sitio web</h1>
-    <p>Este es un ejemplo básico de una página web con PHP.</p>
-</body>
-</html>
+<?php
+// index.php
+
+require_once 'conexion.php'; // Tu archivo de conexión existente
+require_once 'controllers/SiteController.php';
+
+// Instanciamos el controlador pasándole la conexión
+$controlador = new SiteController($conexion);
+
+// Ejecutamos la lógica de la aplicación
+$controlador->manejarPeticion();
